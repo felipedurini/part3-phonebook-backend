@@ -1,4 +1,4 @@
-//this is the content for the first exercises, I checked if it worked in another repository and then just copy pasted it here. It shouldn't conflict with the further work
+//this is the content for the first exercises, I checked if it worked in another repository and then just copy pasted it here. It shouldn't conflict with the other work
 
 const express = require('express')
 const morgan = require('morgan')
