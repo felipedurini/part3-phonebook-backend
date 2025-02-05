@@ -39,8 +39,8 @@ let persons = [
   }
 ]
 
-const now = new Date();
-const time = now.toString();
+const now = new Date()
+const time = now.toString()
 const info = `
 <p>Phonebook has info for ${persons.length} people </p>
 <p>${time}</p>
