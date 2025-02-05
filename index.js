@@ -27,23 +27,12 @@ mongoose.set('strictQuery',false)
 
 morgan.token('body', (req) => {
   if (req.method === 'POST') {
-    return JSON.stringify(req.body)  
+    return JSON.stringify(req.body)
   }
-  return ''  
+  return ''
 })
 
 app.use(morgan(':method :url :status :res[content-length] - :response-time ms :body'))
-
-// const now = new Date();
-// const time = now.toString();
-// const info = `
-// <p>Phonebook has info for ${people.length} people </p>
-// <p>${time}</p>
-// `
-
-app.get('/info', (request, response) => {
-  response.send(info)
-})
 
 app.get('/api/people', (request, response) => {
   Person.find({}).then(people => {
@@ -73,12 +62,12 @@ app.delete('/api/people/:id', (request, response, next) => {
 })
 
 app.put('/api/people/:id', (request, response, next) => {
-  const {name, number} = request.body
+  const { name, number } = request.body
 
   Person.findByIdAndUpdate(
     request.params.id,
-    {name, number},
-      { new: true, runValidators: true, context: 'query' })
+    { name, number },
+    { new: true, runValidators: true, context: 'query' })
     .then(updatedPerson => {
       response.json(updatedPerson)
     })
